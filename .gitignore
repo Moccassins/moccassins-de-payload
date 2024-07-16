@@ -6,7 +6,6 @@ dist
 !/.idea/payload.iml
 
 test-results
-.devcontainer
 .localstack
 /migrations
 .localstack

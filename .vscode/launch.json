@@ -3,6 +3,13 @@
   // Hover to view descriptions of existing attributes.
   "configurations": [
     {
+      "command": "yarn dev",
+      "name": "Debug Website Template",
+      "request": "launch",
+      "type": "node-terminal",
+      "cwd": "${workspaceFolder}/templates/website"
+    },
+    {
       "command": "pnpm generate:types",
       "name": "Generate Types CLI",
       "request": "launch",

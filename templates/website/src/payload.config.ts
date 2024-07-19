@@ -37,7 +37,7 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 const generateTitle = () => {
-  return 'My Website'
+  return 'Moccassins - Webseiten leicht gemacht!'
 }
 
 dotenv.config({

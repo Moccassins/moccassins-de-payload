@@ -37,7 +37,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ header }) => {
       <Link href="/">
         <div className="flex items-center">
           <Logo />
-          <h1 className="text-2xl text-white">Moccassins</h1>
+          <h1 className="text-2xl text-foreground">Moccassins</h1>
         </div>
       </Link>
       <HeaderNav header={header} />

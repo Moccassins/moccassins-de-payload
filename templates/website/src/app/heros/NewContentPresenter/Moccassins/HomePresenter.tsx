@@ -4,7 +4,9 @@ import './HomePresenter.css'
 import RichText from '@/components/RichText'
 import { useHeaderTheme } from '@/providers/HeaderTheme'
 import { PaginatedDocs } from 'payload'
-import { Post } from 'src/payload-types'
+import { Media, Post } from 'src/payload-types'
+import { Card } from '@/components/Card'
+import useImageSourceRotator from './useImageSourceRotator'
 
 interface HomePresenterProps {
   backgroundImage: string
@@ -26,7 +28,19 @@ export default function HomePresenter({
   const containerRef = useRef<HTMLDivElement>(null)
   const [dimensions, setDimensions] = useState({ width: '100%', height: 'auto' })
   const [scaleFactor, setScaleFactor] = useState(1)
+  const newFive: string[] = posts.docs.slice(0, 5).map((doc) => {
+    const media: any = doc.content.root.children.find((child) => {
+      if (child.fields != undefined) {
+        const fields: any = child.fields
+        if (fields.blockType === 'mediaBlock' && fields.media != undefined) {
+          return true
+        }
+      }
+    })
+    return media.fields.media.url
+  })
 
+  const currentImage = useImageSourceRotator({ imageUrls: newFive, interval: 5000 })
   const convertToPixels = (maxHeight: string): number => {
     if (maxHeight.includes('vh')) {
       return (parseFloat(maxHeight) / 100) * window.innerHeight
@@ -94,8 +108,7 @@ export default function HomePresenter({
         />
         <div className="test-content" style={{ transform: `scale(${scaleFactor})` }}>
           <RichText className="test-text" content={text} enableGutter={false} />
-          {/* <div className="test-text" dangerouslySetInnerHTML={{ __html: text }} /> */}
-          <img src={overlayImage} alt="Overlay" className="overlay-image" />
+          <img src={currentImage} alt="Overlay" className="overlay-image" />
         </div>
       </div>
     </div>

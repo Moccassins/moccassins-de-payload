@@ -6936,6 +6936,13 @@ payload-admin-bar@^1.0.6:
   resolved "https://registry.yarnpkg.com/payload-admin-bar/-/payload-admin-bar-1.0.6.tgz#ca25e369a4f319c3d61ff3db4021c1c2fd9d0148"
   integrity sha512-hpQdOiPq4LpWTkbuAnvxDf5wQ2ysMp9kQt+X2U+FfvBwD1U6qoxJfmUymG1OjLlaZzCZ93FlOdTl4u4Z0/m/SA==
 
+payload-visual-editor@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/payload-visual-editor/-/payload-visual-editor-2.0.6.tgz#4bbb200d024b332cc9422a6b6eabca2e230bda59"
+  integrity sha512-GZgd+17gLUV5xi+newTfv9LrIGE95pLiMJpYEuYTLHLm8njJUZ0faTiC7paPZyPx40y9HTzZC+KAQsxO7Q/dxw==
+  dependencies:
+    ts-pattern "^5.0.5"
+
 payload@3.0.0-beta.63:
   version "3.0.0-beta.63"
   resolved "https://registry.yarnpkg.com/payload/-/payload-3.0.0-beta.63.tgz#78a426d31ec7863d66c71679786e87f3b9966a5e"
@@ -8348,6 +8355,11 @@ ts-interface-checker@^0.1.9:
   version "0.1.13"
   resolved "https://registry.yarnpkg.com/ts-interface-checker/-/ts-interface-checker-0.1.13.tgz#784fd3d679722bc103b1b4b8030bcddb5db2a699"
   integrity sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==
+
+ts-pattern@^5.0.5:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/ts-pattern/-/ts-pattern-5.2.0.tgz#2cad8b58fcd87c52d1785f84eba572641e1bb5f3"
+  integrity sha512-aGaSpOlDcns7ZoeG/OMftWyQG1KqPVhgplhJxNCvyIXqWrumM5uIoOSarw/hmmi/T1PnuQ/uD8NaFHvLpHicDg==
 
 tsconfig-paths@^3.14.2, tsconfig-paths@^3.15.0:
   version "3.15.0"

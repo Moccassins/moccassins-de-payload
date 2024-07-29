@@ -33,12 +33,16 @@ import { Header } from './payload/globals/Header/Header'
 import { revalidateRedirects } from './payload/hooks/revalidateRedirects'
 import { GenerateTitle, GenerateURL } from '@payloadcms/plugin-seo/types'
 import { Page, Post } from 'src/payload-types'
+import { visualEditor } from 'payload-visual-editor'
+import 'payload-visual-editor/dist/styles.scss'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
-  return doc?.title ? `${doc.title} | Moccassins - Webseiten leicht gemacht!` : 'Moccassins - Webseiten leicht gemacht!'
+  return doc?.title
+    ? `${doc.title} | Moccassins - Webseiten leicht gemacht!`
+    : 'Moccassins - Webseiten leicht gemacht!'
 }
 
 const generateURL: GenerateURL<Post | Page> = ({ doc }) => {
@@ -162,6 +166,20 @@ export default buildConfig({
             }
             return field
           })
+        },
+      },
+    }),
+    visualEditor({
+      previewUrl: () => `http://localhost:3001/pages/preview`,
+      previewWidthInPercentage: 60,
+      collections: {
+        ['pages']: {
+          previewUrl: () => `...`, // optional individual preview url for each collection
+        },
+      },
+      globals: {
+        ['pages']: {
+          previewUrl: () => `...`, // optional individual preview url for each global
         },
       },
     }),
